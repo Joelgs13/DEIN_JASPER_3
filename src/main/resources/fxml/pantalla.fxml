@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.VBox?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23">
+  <tabs>
+    <Tab text="Productos">
+         <content>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Button fx:id="btListarProductos" mnemonicParsing="false" onAction="#listarProductos" text="Haz click para listar productos" />
+               </children>
+            </VBox>
+         </content>
+    </Tab>
+    <Tab text="Secciones">
+         <content>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Button fx:id="btAgruparPorSeccion" mnemonicParsing="false" onAction="#agrupadosPorSeccion" text="Click para mostrar productos agrupados por seccion" />
+               </children>
+            </VBox>
+         </content>
+    </Tab>
+      <Tab text="Tabla Producto">
+         <content>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Button fx:id="btListarEnTabla" mnemonicParsing="false" onAction="#listarEnTabla" text="Click para listar productos en una tabla" />
+               </children>
+            </VBox>
+         </content>
+      </Tab>
+      <Tab text="Gráficos">
+         <content>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Button fx:id="btGraficoProductos" mnemonicParsing="false" onAction="#graficoProductos" text="Click para mostrar unidades disponibles en un Grafico" />
+               </children>
+            </VBox>
+         </content>
+      </Tab>
+  </tabs>
+</TabPane>
