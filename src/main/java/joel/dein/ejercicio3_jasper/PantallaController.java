@@ -1,3 +1,7 @@
+/**
+ * Controlador de la pantalla principal que gestiona las acciones de los botones para generar informes
+ * con JasperReports.
+ */
 package joel.dein.ejercicio3_jasper;
 
 import BBDD.ConexionBBDD;
@@ -31,6 +35,11 @@ public class PantallaController {
     @FXML
     private Button btListarProductos;
 
+    /**
+     * Acción asociada al botón que genera un informe agrupado por sección.
+     *
+     * @param event Evento de acción del botón.
+     */
     @FXML
     void agrupadosPorSeccion(ActionEvent event) {
         Map<String, Object> parameters = new HashMap<>();
@@ -38,6 +47,11 @@ public class PantallaController {
         generarReporte("/JasperReport/agrupadosPorSeccion.jasper", parameters);
     }
 
+    /**
+     * Acción asociada al botón que genera un gráfico de productos.
+     *
+     * @param event Evento de acción del botón.
+     */
     @FXML
     void graficoProductos(ActionEvent event) {
         Map<String, Object> parameters = new HashMap<>();
@@ -45,6 +59,11 @@ public class PantallaController {
         generarReporte("/JasperReport/GraficoUnidades.jasper", parameters);
     }
 
+    /**
+     * Acción asociada al botón que genera una tabla de productos.
+     *
+     * @param event Evento de acción del botón.
+     */
     @FXML
     void listarEnTabla(ActionEvent event) {
         Map<String, Object> parameters = new HashMap<>();
@@ -52,6 +71,11 @@ public class PantallaController {
         generarReporte("/JasperReport/tablaDeProductos.jasper", parameters);
     }
 
+    /**
+     * Acción asociada al botón que lista los productos.
+     *
+     * @param event Evento de acción del botón.
+     */
     @FXML
     void listarProductos(ActionEvent event) {
         Map<String, Object> parameters = new HashMap<>();
@@ -60,7 +84,7 @@ public class PantallaController {
     }
 
     /**
-     * Metodo que genera el reporte utilizando JasperReports.
+     * Genera un reporte utilizando JasperReports.
      *
      * @param reportePath Ruta del archivo JasperReport.
      * @param parameters Parámetros necesarios para la generación del informe.
@@ -89,8 +113,8 @@ public class PantallaController {
     /**
      * Muestra un cuadro de diálogo con un mensaje de error.
      *
-     * @param titulo El título del cuadro de diálogo.
-     * @param mensaje El mensaje a mostrar en el cuadro de diálogo.
+     * @param titulo Título del cuadro de diálogo.
+     * @param mensaje Mensaje a mostrar en el cuadro de diálogo.
      */
     private void mostrarError(String titulo, String mensaje) {
         // Crear una ventana emergente de tipo "error"
