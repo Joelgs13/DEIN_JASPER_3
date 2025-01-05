@@ -4,7 +4,7 @@
  */
 package joel.dein.ejercicio3_jasper;
 
-import BBDD.ConexionBBDD;
+import joel.dein.ejercicio3_jasper.BBDD.ConexionBBDD;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;

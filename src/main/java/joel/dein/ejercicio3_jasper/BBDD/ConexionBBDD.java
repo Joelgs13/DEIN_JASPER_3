@@ -1,4 +1,4 @@
-package BBDD;
+package joel.dein.ejercicio3_jasper.BBDD;
 
 import java.io.FileInputStream;
 import java.io.IOException;
