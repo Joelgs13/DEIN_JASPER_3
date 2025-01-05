@@ -33,7 +33,9 @@ public class PantallaController {
 
     @FXML
     void agrupadosPorSeccion(ActionEvent event) {
-
+        Map<String, Object> parameters = new HashMap<>();
+        parameters.put("IMAGE_PATH", getClass().getResource("/img/").toString());
+        generarReporte("/JasperReport/agrupadosPorSeccion.jasper", parameters);
     }
 
     @FXML

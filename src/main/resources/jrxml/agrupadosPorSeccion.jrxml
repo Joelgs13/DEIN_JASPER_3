@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.5.final using JasperReports Library version 6.20.5-3efcf2e67f959db3888d79f73dde2dbd7acb4f8e  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="agrupadosPorSeccion" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5b6043ba-e9f6-4d8e-a3be-def55b198377">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="105"/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="890"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="ContraDockerExamen1"/>
+	<parameter name="IMAGE_PATH" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT 
+        supermercado.producto.nombre,  
+        supermercado.producto.precio,  
+        supermercado.producto.stock, 
+        supermercado.producto.seccion, 
+        supermercado.seccion.nombre AS COLUMN_5, 
+        supermercado.seccion.codigo
+    FROM 
+        supermercado.producto
+    INNER JOIN 
+        supermercado.seccion 
+    ON 
+        supermercado.producto.seccion = supermercado.seccion.codigo
+    ORDER BY 
+        supermercado.seccion.nombre, 
+        supermercado.producto.nombre]]>
+	</queryString>
+	<field name="nombre" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nombre"/>
+		<property name="com.jaspersoft.studio.field.label" value="nombre"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="producto"/>
+	</field>
+	<field name="precio" class="java.lang.Float">
+		<property name="com.jaspersoft.studio.field.name" value="precio"/>
+		<property name="com.jaspersoft.studio.field.label" value="precio"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="producto"/>
+	</field>
+	<field name="stock" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="stock"/>
+		<property name="com.jaspersoft.studio.field.label" value="stock"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="producto"/>
+	</field>
+	<field name="seccion" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="seccion"/>
+		<property name="com.jaspersoft.studio.field.label" value="seccion"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="producto"/>
+	</field>
+	<field name="COLUMN_5" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nombre"/>
+		<property name="com.jaspersoft.studio.field.label" value="nombre"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="seccion"/>
+	</field>
+	<field name="codigo" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="codigo"/>
+		<property name="com.jaspersoft.studio.field.label" value="codigo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="seccion"/>
+	</field>
+	<group name="codigo">
+		<groupExpression><![CDATA[$F{codigo}]]></groupExpression>
+	</group>
+	<group name="SeccionGrupo">
+		<groupExpression><![CDATA[$F{COLUMN_5}]]></groupExpression>
+		<groupHeader>
+			<band height="60">
+				<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				<textField>
+					<reportElement mode="Opaque" x="0" y="0" width="549" height="30" forecolor="#0820FF" backcolor="#A294FF" uuid="be02d654-f65b-4542-919a-1a3925bf0847"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{COLUMN_5}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement mode="Opaque" x="274" y="30" width="138" height="30" forecolor="#0820FF" backcolor="#A294FF" uuid="07761530-f293-4b2a-b1f6-9f88c3f3b0f8">
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[PRECIO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="137" y="30" width="137" height="30" forecolor="#0820FF" backcolor="#A294FF" uuid="ac5f7bee-c5b1-48ab-92d6-f833950370ed">
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[UNIDAD]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="412" y="30" width="137" height="30" forecolor="#0820FF" backcolor="#A294FF" uuid="6b33813a-e12c-4c94-be2b-dc46678ef134">
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[PRECIO IVA]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="30" width="137" height="30" forecolor="#0818FF" backcolor="#A294FF" uuid="f3eb39a0-6a8f-42e2-970b-22c47ce4474a">
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[PRODUCTO]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="10">
+				<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="549" height="79" forecolor="#0820FF" backcolor="#A294FF" uuid="00a81da2-54ed-4417-816e-4c9bda050c8f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="40"/>
+				</textElement>
+				<text><![CDATA[VIEGOSHOP]]></text>
+			</staticText>
+			<image>
+				<reportElement x="470" y="0" width="79" height="79" uuid="a587add3-3b39-4295-98f7-659ee8b42448"/>
+				<imageExpression><![CDATA[$P{IMAGE_PATH}+"logoSupermercado.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="59" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="549" height="59" forecolor="#0820FF" backcolor="#A294FF" uuid="46d8d951-8b5d-47a5-be85-66c5e7d95ddd"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="25"/>
+				</textElement>
+				<text><![CDATA[PRODUCTOS AGRUPADOS POR SECCION]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<textField>
+				<reportElement x="137" y="0" width="137" height="30" uuid="5af20c08-0eed-406d-ad80-b7c9cff12e05">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{stock}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="0" y="0" width="137" height="30" forecolor="#000000" uuid="e9158b8b-196c-4f52-b0dd-304394cff3f0">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00">
+				<reportElement x="274" y="0" width="138" height="30" uuid="f77c1fba-9913-4ce1-9d9a-fda1e1357675">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{precio}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00">
+				<reportElement x="411" y="0" width="138" height="30" uuid="2faefa39-7eab-4d9a-9498-18d110ec6e63">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{precio}/100*121]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="30" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="14" uuid="d2ea3b0a-c578-4ced-b89f-eaa84b29e2e3"/>
+				<text><![CDATA[C/ Jungla 13, Piltover]]></text>
+			</staticText>
+			<textField pattern="EEEE, d &apos;de&apos; MMMM &apos;del&apos; yyyy">
+				<reportElement x="0" y="14" width="230" height="15" uuid="83b28df7-5a7f-48eb-ab2c-3897a5e4f2d8"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="370" y="0" width="100" height="30" uuid="a3d5a960-442e-4fa3-b377-05cc0f5f7c31"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["Página "+$V{PAGE_NUMBER}+" /"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="470" y="0" width="79" height="30" uuid="82ebfb74-a589-4a6d-b4a6-7f247cd937f8"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
