@@ -45,7 +45,9 @@ public class PantallaController {
 
     @FXML
     void listarEnTabla(ActionEvent event) {
-
+        Map<String, Object> parameters = new HashMap<>();
+        parameters.put("IMAGE_PATH", getClass().getResource("/img/").toString());
+        generarReporte("/JasperReport/tablaDeProductos.jasper", parameters);
     }
 
     @FXML
