@@ -40,7 +40,9 @@ public class PantallaController {
 
     @FXML
     void graficoProductos(ActionEvent event) {
-
+        Map<String, Object> parameters = new HashMap<>();
+        parameters.put("IMAGE_PATH", getClass().getResource("/img/").toString());
+        generarReporte("/JasperReport/GraficoUnidades.jasper", parameters);
     }
 
     @FXML
